@@ -36,7 +36,6 @@ cp ./${SETUP_DIR}/set_version.php ./
 cp ./${SETUP_DIR}/get_version.php ./
 cp ./${SETUP_DIR}/.gitignore ./
 
-git init
 git status
 git add .
 git commit -m "Fist setup of com_${FILE_FOLDER_NAME} using skelet generator"
