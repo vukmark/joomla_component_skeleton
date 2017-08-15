@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+cd ${GIT_DIR}/../
+source $GIT_DIR/../mkconstants.sh
+VERSION=$(php get_version.php $EXTENSION_NAME)
+mkdir -p ./versions/tmp/admin/
+mkdir -p ./versions/tmp/site/
+mkdir -p ./versions/tmp/media/
+cp -R ./administrator/components/com_${EXTENSION_NAME}/* ./versions/tmp/admin/
+cp -R ./components/com_${EXTENSION_NAME}/* ./versions/tmp/site/
+cp -R ./media/com_${EXTENSION_NAME}/* ./versions/tmp/media/
+cd ./versions/tmp/
+mv ./admin/${EXTENSION_NAME}.xml ./
+zip -r ${EXTENSION_NAME}_${VERSION}.zip ./ -x \*.zip
+mv ${EXTENSION_NAME}_${VERSION}.zip ../
+cd ../
+rm -fR tmp

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source $GIT_DIR/../mkconstants.sh
+echo $EXTENSION_NAME
+php set_version.php $EXTENSION_NAME
+git add $GIT_DIR/../.
