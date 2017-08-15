@@ -7,5 +7,4 @@ script adds git hooks that is used to generated
 joomla component installation.
 
 ### How to use it
-
-
+Comming soon
